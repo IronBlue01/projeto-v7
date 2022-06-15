@@ -1,0 +1,11 @@
+.mycard{
+    cursor: pointer;
+}
+
+.icone{
+    cursor: pointer;
+}
+
+.icon:hover{
+    background-color: brown !important;
+}
