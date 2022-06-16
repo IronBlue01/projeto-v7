@@ -37,5 +37,10 @@ Route::get('/sobre', 'SiteController@sobre');
 Route::post('cadastro-cliente', 'CadastroController@cadastroBoleto')->name('cadastro-cliente');
 
 
+Route::get('page-cliente', 'UserController@PageCliente')->name('page-cliente');
+
+
+
+
 
 

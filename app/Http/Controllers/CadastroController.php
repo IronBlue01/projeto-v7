@@ -25,11 +25,12 @@ class CadastroController extends Controller
         }
 
         Cliente::create([
-            'nome'     => $request->nome,
-            'senha'    => $request->senha,
-            'email'    => $request->link,
-            'data'     => $request->data,
-            'arquivo'  => $request->$fileName
+            'nome'       => $request->nome,
+            'senha'      => $request->senha,
+            'email'      => $request->email,
+            'link_drive' => $request->link,
+            'data'       => $request->data,
+            'arquivo'    => $request->$fileName
         ]);
 
         return redirect('/home')->with('msg', 'Cliente cadastrado com sucesso');

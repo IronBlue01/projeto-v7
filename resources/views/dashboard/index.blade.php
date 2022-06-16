@@ -13,6 +13,8 @@
               Administrativo
             </h2>
 
+            
+
             <!-- CTA -->
             <a
               style="display:none;"
@@ -165,6 +167,8 @@
                   <tbody
                     class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                   >
+
+                  @foreach($clientes as $cliente)
                     <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
                         <div class="flex items-center text-sm">
@@ -174,7 +178,7 @@
                           >
                             <img
                               class="object-cover w-full h-full rounded-full"
-                              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                              src="./dashboard/img/avatar.png"
                               alt=""
                               loading="lazy"
                             />
@@ -184,15 +188,15 @@
                             ></div>
                           </div>
                           <div>
-                            <p class="font-semibold">Hans Burger</p>
+                            <p class="font-semibold">{{$cliente['nome']}}</p>
                             <p class="text-xs text-gray-600 dark:text-gray-400">
-                              10x Developer
+                              {{$cliente['email']}}
                             </p>
                           </div>
                         </div>
                       </td>
                       <td class="px-4 py-3 text-sm">
-                        $ 863.45
+                        {{$cliente['senha']}}
                       </td>
                       <td class="px-4 py-3 text-xs">
                         <span
@@ -208,6 +212,7 @@
                       </td>
                     </tr>
 
+                    @endforeach
   
                   </tbody>
                 </table>
@@ -392,6 +397,15 @@
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="****"
                   name="senha"
+                />
+          </label>
+
+          <label class="block text-sm mt-2">
+                <span class="text-gray-700 dark:text-gray-400">E-mail:</span>
+                <input
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="****"
+                  name="email"
                 />
           </label>
 
