@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Models\Cliente;
+use App\Http\Models\Boleto;
 use Carbon\Carbon;
 
 class CadastroController extends Controller
@@ -15,24 +16,30 @@ class CadastroController extends Controller
         if($request->hasFile('arquivo') && $request->file('arquivo')->isValid()){
 
            $requestFile = $request->arquivo;
-
-           $extension = $requestFile->extension();
-
+           $extension = $requestFile->getClientOriginalExtension();
            $fileName  = md5($requestFile->getClientOriginalName() . strtotime('now')).'.'.$extension;
-
            $requestFile->move(public_path('dashboard/boletos'),$fileName);
 
         }
 
-        Cliente::create([
+        $request->cpf;
+
+       $insert_client = Cliente::create([
             'nome'       => $request->nome,
             'senha'      => $request->senha,
-            'email'      => $request->email,
             'link_drive' => $request->link,
-            'data'       => $request->data,
-            'arquivo'    => $request->$fileName
+            'username'   => 'v7formaturas'
         ]);
 
-        return redirect('/home')->with('msg', 'Cliente cadastrado com sucesso');
+
+            Boleto::create([
+                'id_cliente'   => $insert_client->id,
+                'data'         => $request->data,
+                'nome_arquivo' => $request->arquivo,
+                'arquivo'      =>  $fileName,
+                'status'       => 'aprovado'
+            ]);
+
+            return redirect('/home')->with('msg', 'Cliente cadastrado com sucesso');
     }
 }

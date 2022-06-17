@@ -15,7 +15,7 @@
             <h2
               class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
             >
-              Pagamento
+              Fotos e Pagamentos
             </h2>
             <!-- CTA -->
             <a
@@ -54,7 +54,7 @@
                       class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
                       <th class="px-4 py-3">Tipo</th>
-                      <th class="px-4 py-3">Valor</th>
+                      <th class="px-4 py-3 hidden">Valor</th>
                       <th class="px-4 py-3">Baixar</th>
                       <th class="px-4 py-3">Data</th>
                     </tr>
@@ -88,7 +88,7 @@
                           </div>
                         </div>
                       </td>
-                      <td class="px-4 py-3 text-sm">
+                      <td class="px-4 hidden py-3 text-sm">
                         R$ 50,00
                       </td>
                       <td class="px-4 py-3 text-xs text-center">

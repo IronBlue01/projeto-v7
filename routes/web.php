@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,31 +14,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/user', 'SiteController@login')->name('login');
+
+Route::post('authentication','AuthController@auth')->name('authentication');
 
 Route::get('/', 'SiteController@home');
 
-Route::get('/home', 'SiteController@homeDash');
+Route::get('home', 'SiteController@homeDash');
 
-Route::get('/modal', 'SiteController@modal');
+Route::get('modal', 'SiteController@modal');
 
-Route::get('/card', 'SiteController@card');
+Route::get('card', 'SiteController@card');
 
-Route::get('/form', 'SiteController@form');
+Route::get('form', 'SiteController@form');
 
-Route::get('/chart', 'SiteController@chart');
+Route::get('chart', 'SiteController@chart');
 
-Route::get('/button', 'SiteController@buttons');
+Route::get('button', 'SiteController@buttons');
 
-Route::get('/table', 'SiteController@table');
+Route::get('table', 'SiteController@table');
 
-Route::get('/sobre', 'SiteController@sobre');
+Route::get('sobre', 'SiteController@sobre');
 
 Route::post('cadastro-cliente', 'CadastroController@cadastroBoleto')->name('cadastro-cliente');
 
 
-Route::get('page-cliente', 'UserController@PageCliente')->name('page-cliente');
+Route::middleware(AuthMiddleware::class)
+      ->get('page-cliente/{id_cliente}', 'UserController@PageCliente')
+      ->name('page-cliente');
 
 
 

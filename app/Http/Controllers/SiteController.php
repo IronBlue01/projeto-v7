@@ -19,9 +19,12 @@ class SiteController extends Controller
 
     public function homeDash(){
 
-        $clientes =  Cliente::all();
+        $clientes     =  Cliente::all();
+        $num_clientes = $clientes->count();
 
-        return view('dashboard.index', ['clientes' => $clientes]);
+        return view('dashboard.index', ['clientes'     => $clientes,
+                                        'num_clientes' => $num_clientes
+                                       ]);
     }
 
     public function modal(){
