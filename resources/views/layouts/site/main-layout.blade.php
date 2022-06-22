@@ -94,7 +94,7 @@
                                 <!-- Search Form -->
                                 <div class="header-search-form ml-auto">
                                     <form action="#">
-                                        <input type="search" class="form-control" placeholder="Input your keyword then press enter..." id="search" name="search">
+                                        <input type="search" class="form-control" placeholder="Digite oque deseja buscar..." id="search" name="search">
                                         <input class="d-none" type="submit" value="submit">
                                     </form>
                                 </div>
