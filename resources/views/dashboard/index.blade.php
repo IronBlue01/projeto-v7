@@ -90,7 +90,7 @@
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    R$ 5.000
+                    R$ 000
                   </p>
                 </div>
               </div>
@@ -116,7 +116,7 @@
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    376
+                    0
                   </p>
                 </div>
               </div>
@@ -144,7 +144,7 @@
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    35
+                    0
                   </p>
                 </div>
               </div>
@@ -159,7 +159,7 @@
                       class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
                       <th class="px-4 py-3">CLIENTES</th>
-                      <th class="px-4 py-3">SENHA</th>
+                      <th class="px-4 py-3">CPF</th>
                       <th class="px-4 py-3">STATUS PAGAMENTO</th>
                       <th class="px-4 py-3">DELETAR</th>
                     </tr>
@@ -196,7 +196,7 @@
                         </div>
                       </td>
                       <td class="px-4 py-3 text-sm">
-                        {{$cliente['senha']}}
+                        {{$cliente['cpf']}}
                       </td>
                       <td class="px-4 py-3 text-xs">
                         <span

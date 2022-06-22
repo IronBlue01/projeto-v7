@@ -53,12 +53,12 @@
                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                   ></path>
                 </svg>
-                <span class="ml-4">Dashboard</span>
+                <span class="ml-4">Home</span>
               </a>
             </li>
           </ul>
           <ul>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/form"
@@ -80,7 +80,7 @@
                 <span class="ml-4">Formulários</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <span
                 class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                 aria-hidden="true"
@@ -106,7 +106,7 @@
                 <span class="ml-4">Cards</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/chart"
@@ -129,7 +129,7 @@
                 <span class="ml-4">Gráfico</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/button"
@@ -151,7 +151,7 @@
                 <span class="ml-4">Botões</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/modal"
@@ -173,7 +173,7 @@
                 <span class="ml-4">Modal</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/table"
@@ -193,7 +193,7 @@
                 <span class="ml-4">Tabelas</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <button
                 class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 @click="togglePagesMenu"
@@ -334,7 +334,7 @@
                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                   ></path>
                 </svg>
-                <span class="ml-4">Dashboard</span>
+                <span class="ml-4">Home</span>
               </a>
             </li>
           </ul>
@@ -734,7 +734,7 @@
                 >
                   <img
                     class="object-cover w-8 h-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
+                    src="/dashboard/img/avatar.png"
                     alt=""
                     aria-hidden="true"
                   />
@@ -797,7 +797,7 @@
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="#"
+                        href="{{route('page-login')}}"
                       >
                         <svg
                           class="w-4 h-4 mr-3"

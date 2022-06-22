@@ -5,7 +5,7 @@
 <style>
 
   #alert-topo{
-    background-color: rgb(34 197 94);
+    background-color: rgb(185 28 28);
     color:white;
   }
 
@@ -21,7 +21,7 @@
             
             <a
               id="alert-topo"
-              class="flex items-center justify-between p-4 mb-8 text-sm font-semibold  bg-green-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+              class="flex items-center justify-between p-4 mb-8 text-sm font-semibold  bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
               href="{{$cliente->link_drive}}" 
             >
               <div class="flex items-center">
@@ -71,7 +71,7 @@
                             class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
                           >
                             <img
-                              class="object-cover w-full h-full rounded-full"
+                              class="object-cover w-full h-full rounded-full hidden"
                               src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
                               alt=""
                               loading="lazy"
@@ -84,7 +84,7 @@
                           <div>
                             <p class="font-semibold">Boleto</p>
                             <p class="text-xs text-gray-600 dark:text-gray-400">
-                              10x Developer
+                              ...
                             </p>
                           </div>
                         </div>
