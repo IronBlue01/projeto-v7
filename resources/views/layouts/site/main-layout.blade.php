@@ -71,7 +71,7 @@
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Páginas</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="/">Home</a>
-                                            <a class="dropdown-item" href="/sobre">Área do cliente</a>
+                                            <a class="dropdown-item" href="/page-login">Área do cliente</a>
                                             <a class="dropdown-item" href="#">Portfolio</a>
                                             <!-- <a class="dropdown-item" href="/blog">Blog</a> -->
                                             <a class="dropdown-item" href="/page-login">Área do cliente</a>
