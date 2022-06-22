@@ -12,14 +12,14 @@ class AuthController extends Controller
        $senha =  $request->senha;
 
        $cliente = Cliente::where('username', $user)
-                          ->where('senha',$senha)
-                          ->get();
-
-     $id_cliente = $cliente->toArray()[0]['id_cliente'];
+                          ->where('cpf',$senha)
+                          ->first();
 
 
        if($cliente->count()>0){
-        return redirect("page-cliente/$id_cliente");
+        return redirect("page-cliente/$cliente->id_cliente");
+       }else{
+        return redirect("user/");
        }
       
 

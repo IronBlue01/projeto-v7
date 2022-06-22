@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/user', 'SiteController@login')->name('login');
+Route::get('/page-login', 'SiteController@pageLogin')->name('page-login');
 
 Route::post('authentication','AuthController@auth')->name('authentication');
 
@@ -43,6 +43,8 @@ Route::middleware(AuthMiddleware::class)
       ->get('page-cliente/{id_cliente}', 'UserController@PageCliente')
       ->name('page-cliente');
 
+
+Route::get('download/{arquivo}/{nome_arquivo}','DownloadController@download')->name('download');
 
 
 

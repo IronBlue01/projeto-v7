@@ -18,10 +18,11 @@
               Fotos e Pagamentos
             </h2>
             <!-- CTA -->
+            
             <a
               id="alert-topo"
               class="flex items-center justify-between p-4 mb-8 text-sm font-semibold  bg-green-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
-              href="#"
+              href="{{$cliente->link_drive}}" 
             >
               <div class="flex items-center">
 
@@ -100,8 +101,11 @@
 
 
                         <svg xmlns="http://www.w3.org/2000/svg" 
-                             class="h-6 w-6 text-center ml-3" 
+                             class="h-6 w-6 text-center ml-3 fa-download" 
                              fill="none" 
+                             style="cursor:pointer;"
+                             data-file="{{$boleto->arquivo}}"
+                             data-name-file="{{$boleto->nome_arquivo}}"
                              viewBox="0 0 24 24" 
                              stroke="currentColor" 
                              stroke-width="2">
@@ -110,7 +114,7 @@
 
                       </td>
                       <td class="px-4 py-3 text-sm">
-                        6/10/2020
+                        {{$vencimento}}
                       </td>
                     </tr>
 
@@ -131,4 +135,6 @@
             
           </div>
         </main>
+
+       <script src="{{asset('dashboard//js/page_cliente.js')}}"></script>
 @endsection('content')

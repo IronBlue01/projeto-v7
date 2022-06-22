@@ -12,31 +12,32 @@ class CadastroController extends Controller
 {
     public function cadastroBoleto(Request $request){
 
+        $requestFile = $request->arquivo;
+
         //Boleto upload
         if($request->hasFile('arquivo') && $request->file('arquivo')->isValid()){
 
-           $requestFile = $request->arquivo;
            $extension = $requestFile->getClientOriginalExtension();
            $fileName  = md5($requestFile->getClientOriginalName() . strtotime('now')).'.'.$extension;
-           $requestFile->move(public_path('dashboard/boletos'),$fileName);
+           $requestFile->move(storage_path('app/boletos/'),$fileName);
 
         }
 
-        $request->cpf;
 
        $insert_client = Cliente::create([
             'nome'       => $request->nome,
-            'senha'      => $request->senha,
+            'senha'      => 123,
+            'cpf'        => $request->cpf,
             'link_drive' => $request->link,
             'username'   => 'v7formaturas'
         ]);
 
 
             Boleto::create([
-                'id_cliente'   => $insert_client->id,
+                'id_cliente'   => $insert_client->id_cliente,
                 'data'         => $request->data,
-                'nome_arquivo' => $request->arquivo,
-                'arquivo'      =>  $fileName,
+                'nome_arquivo' => $requestFile->getClientOriginalName(),
+                'arquivo'      => $fileName,
                 'status'       => 'aprovado'
             ]);
 

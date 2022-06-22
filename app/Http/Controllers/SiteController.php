@@ -13,7 +13,7 @@ class SiteController extends Controller
     }
 
 
-    public function login(){
+    public function pageLogin(){
         return view('login.login');
     }
 

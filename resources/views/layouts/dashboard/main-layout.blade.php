@@ -14,6 +14,8 @@
       defer
     ></script>
     <script src="{{asset('dashboard//js/init-alpine.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
   </head>
   <body>
     <div

@@ -47,7 +47,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>03.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> </h2> -->
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>04.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>05.</span>
-                            <h2> Believe you can fly</h2>
+                            <h2> Você chegou la</h2>
                         </div>
                     </div>
                 </div>
