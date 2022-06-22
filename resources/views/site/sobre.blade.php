@@ -138,7 +138,7 @@
                 <div class="col-10">
                     <div class="about-content mt-100 mb-100 text-center">
                         <span></span>
-                        <h2>What can I tell you about me?</h2>
+                        <h2>AQUI PODE ENTRAR INFORMAÇÕES</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate id justo quis facilisis. Vestibulum id orci ligula. Sed tempor, nunc ut sodales pulvinar, mauris ante euismod magna, at elementum lectus leo sed enim. Praesent dictum suscipit tincidunt. Nulla facilisi. Aenean in mollis orci. Ut interdum vulputate ante a egestas. Pellentesque varius purus malesuada arcu semper vehicula.</p>
                     </div>
                 </div>
@@ -147,21 +147,21 @@
                         <div class="col-12 col-md-4">
                             <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.1s">
                                 <img src="./site/img/core-img/heart.png" alt="">
-                                <h5>Wedding Photography</h5>
+                                <h5>Tipos de serviços</h5>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.4s">
                                 <img src="./site/img/core-img/photo-camera.png" alt="">
-                                <h5>Studio Photography</h5>
+                                <h5>Redes sociais</h5>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.9s">
                                 <img src="./site/img/core-img/video-camera.png" alt="">
-                                <h5>Portraits Photography</h5>
+                                <h5>Tipos de fotografia</h5>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
                             </div>
                         </div>
@@ -174,25 +174,25 @@
                             <div class="col-12 col-sm-6 col-md-3">
                                 <div class="single-pie-bar" data-percent="75">
                                     <canvas class="bar-circle" width="100" height="100"></canvas>
-                                    <h6>Fashion</h6>
+                                    <h6>Casamentos</h6>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
                                 <div class="single-pie-bar" data-percent="83">
                                     <canvas class="bar-circle" width="100" height="100"></canvas>
-                                    <h6>Portraits</h6>
+                                    <h6>Formaturas</h6>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
                                 <div class="single-pie-bar" data-percent="25">
                                     <canvas class="bar-circle" width="100" height="100"></canvas>
-                                    <h6>Studio</h6>
+                                    <h6>Festas</h6>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
                                 <div class="single-pie-bar" data-percent="95">
                                     <canvas class="bar-circle" width="100" height="100"></canvas>
-                                    <h6>Weddings</h6>
+                                    <h6>Eventos</h6>
                                 </div>
                             </div>
                         </div>
