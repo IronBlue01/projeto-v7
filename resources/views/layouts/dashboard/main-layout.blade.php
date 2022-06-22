@@ -339,7 +339,7 @@
             </li>
           </ul>
           <ul>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="forms.html"
@@ -361,7 +361,7 @@
                 <span class="ml-4">Forms</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <span
                 class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                 aria-hidden="true"
@@ -387,7 +387,7 @@
                 <span class="ml-4">Cards</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="charts.html"
@@ -410,7 +410,7 @@
                 <span class="ml-4">Charts</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="buttons.html"
@@ -432,7 +432,7 @@
                 <span class="ml-4">Buttons</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="modals.html"
@@ -454,7 +454,7 @@
                 <span class="ml-4">Modals</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="tables.html"
@@ -474,7 +474,7 @@
                 <span class="ml-4">Tables</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-3 hidden">
               <button
                 class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 @click="togglePagesMenu"
