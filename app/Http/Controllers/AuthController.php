@@ -19,11 +19,10 @@ class AuthController extends Controller
                           ->where('cpf',$senha)
                           ->first();
 
-
-       if($cliente->count()>0){
-        return redirect("page-cliente/$cliente->id_cliente");
+       if($cliente){
+         return redirect("page-cliente/$cliente->id_cliente");
        }else{
-        return redirect("page-login");
+        return redirect('page-login');
        }
       
 
