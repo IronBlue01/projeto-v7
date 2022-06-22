@@ -44,9 +44,9 @@ Route::middleware(AuthMiddleware::class)
       ->name('page-cliente');
 
 
+Route::get('download/{arquivo}/{nome_arquivo}','DownloadController@download')->name('download');
+
 Route::get('deleta-usuario/{id_user}','UserController@delete')->name('deleta-usuario');
-
-
 
 
 
