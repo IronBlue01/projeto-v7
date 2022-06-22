@@ -162,7 +162,7 @@
                             <div class="col-12">
                                 <div class="contact-heading-text text-center mb-30">
                                     <span></span>
-                                    <h2>Please get in touch</h2>
+                                    <h2>Entre em contato</h2>
                                 </div>
                             </div>
                         </div>
@@ -173,19 +173,19 @@
                             <form action="#" method="post">
                                 <div class="row">
                                     <div class="col-12 col-md-4">
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Seu nome">
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email">
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto">
                                     </div>
                                     <div class="col-12">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Mensagem"></textarea>
                                     </div>
                                     <div class="col-12 text-center">
-                                        <button type="submit" class="btn studio-btn mt-3"><img src="./site/img/core-img/logo-icon.png" alt=""> Send</button>
+                                        <button type="submit" class="btn studio-btn mt-3"><img src="./site/img/core-img/logo-icon.png" alt=""> Enviar</button>
                                     </div>
                                 </div>
                             </form>
