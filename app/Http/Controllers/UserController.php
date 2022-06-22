@@ -24,4 +24,21 @@ class UserController extends Controller
                                     'vencimento' => $vencimento 
                                   ]);
     }
+
+    public function delete(Request $request){
+
+        //Encontra o nome do arquivo do boleto
+        $arquivo = Boleto::find($request->id_user)->arquivo;
+
+        //Deleta o arquivo do boleto
+        unlink(storage_path('app/boletos/').$arquivo);
+
+        //apaga o user do banco  
+        Cliente::findOrFail($request->id_user)->delete();
+
+        //apaga o boleto do banco e da pasta
+        Boleto::findOrfail($request->id_user)->delete();
+
+        return redirect('home');
+    }
 }

@@ -30,7 +30,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>01.</span>
-                            <h2> Você chegou lá</h2>
+                            <h2> Você chegou la</h2>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>06.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>07.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>08.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>09.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>10.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>11.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>12.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                     <div class="carousel-content h-100">
                         <div class="slide-text">
                             <span>13.</span>
-                            <h2> Believe you can fly</h2>
+                            <!-- <h2> Believe you can fly</h2> -->
                         </div>
                     </div>
                 </div>
