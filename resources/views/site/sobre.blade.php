@@ -34,13 +34,13 @@
             </div>
         </div>
         <div class="questions-area text-center">
-            <p>Did you know?</p>
+            
             <ul>
-                <li>The largest photography competition is 353,768 entries.</li>
-                <li>Photography is the toughest profession in the world.</li>
+                <li>V7 Formaturas.</li>
+                <!-- <li>Photography is the toughest profession in the world.</li>
                 <li>The world’s largest photo album by dimensions was 13 ft 11.5 in x 17 ft.</li>
                 <li>The world’s largest photo mosaic featured 176,175 pictures.</li>
-                <li>The world’s largest camera lens was a 5200mm lens attached to a canon.</li>
+                <li>The world’s largest camera lens was a 5200mm lens attached to a canon.</li> -->
             </ul>
         </div>
     </div>
@@ -67,33 +67,37 @@
                                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paginas</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="/">Home</a>
-                                            <a class="dropdown-item" href="/sobre">About</a>
+                                            <a class="dropdown-item" href="/sobre">sobre</a>
                                             <a class="dropdown-item" href="/portfolio">Portfolio</a>
-                                            <a class="dropdown-item" href="/blog">Blog</a>
-                                            <a class="dropdown-item" href="/contato">Contact</a>
-                                            <a class="dropdown-item" href="/elementos">Elements</a>
+                                            <a class="dropdown-item" href="/page-login">Área do cliente</a>
+                                            <!-- <a class="dropdown-item" href="/blog">Blog</a> -->
+                                            <a class="dropdown-item" href="/contato">Contato</a>
+                                            
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/sobre">About</a>
+                                        <a class="nav-link" href="/sobre">Sobre</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/portfolio">Portfolio</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/blog">Blog</a>
+                                        <a class="nav-link" href="/page-login">Área do cliente</a>
                                     </li>
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="/blog">Blog</a>
+                                    </li> -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/contato">contact</a>
+                                        <a class="nav-link" href="/contato">Contato</a>
                                     </li>
                                 </ul>
                                 <!-- Search Form -->
                                 <div class="header-search-form ml-auto">
                                     <form action="#">
-                                        <input type="search" class="form-control" placeholder="Input your keyword then press enter..." id="search" name="search">
+                                        <input type="search" class="form-control" placeholder="Procure por uma palavra..." id="search" name="search">
                                         <input class="d-none" type="submit" value="submit">
                                     </form>
                                 </div>
@@ -205,7 +209,7 @@
             <div class="row">
                 <div class="col-11 ml-auto">
                     <div class="follow-me-title">
-                        <h5>Follow me @ Instagram</h5>
+                        <h5>Nos siga @ Instagram</h5>
                     </div>
                 </div>
             </div>
@@ -253,7 +257,7 @@
                         <!-- Single Footer Content -->
                         <div class="single-footer-content">
                             <img src="./site/img/core-img/map.png" alt="">
-                            <a href="#">Blvd Libertad, 34 m05200 Arévalo</a>
+                            <a href="#">Araruna, 00 Rua: ...</a>
                         </div>
                         <!-- Single Footer Content -->
                         <div class="single-footer-content">
@@ -263,7 +267,7 @@
                         <!-- Single Footer Content -->
                         <div class="single-footer-content">
                             <img src="./site/img/core-img/envelope-2.png" alt="">
-                            <a href="#">hello@company.com</a>
+                            <a href="#">v7formaturas@gmail.com</a>
                         </div>
                     </div>
                 </div>

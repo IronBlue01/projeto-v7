@@ -72,23 +72,23 @@
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="/">Home</a>
                                             <a class="dropdown-item" href="/sobre">Área do cliente</a>
-                                            <a class="dropdown-item" href="/portfolio">Portfolio</a>
-                                            <a class="dropdown-item" href="/blog">Blog</a>
-                                            <a class="dropdown-item" href="/user">Área do cliente</a>
-                                            <a class="dropdown-item" href="/elementos">Elements</a>
+                                            <a class="dropdown-item" href="#">Portfolio</a>
+                                            <!-- <a class="dropdown-item" href="/blog">Blog</a> -->
+                                            <a class="dropdown-item" href="/page-login">Área do cliente</a>
+                                            <!-- <a class="dropdown-item" href="/elementos">Elements</a> -->
                                         </div>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/sobre">Sobre</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/portfolio">Portfolio</a>
+                                        <a class="nav-link" href="#">Portfolio</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="nav-link" href="/blog">Blog</a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/user">Área do cliente</a>
+                                        <a class="nav-link" href="/page-login">Área do cliente</a>
                                     </li>
                                 </ul>
                                 <!-- Search Form -->
