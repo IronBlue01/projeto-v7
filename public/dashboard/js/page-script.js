@@ -8,7 +8,7 @@ $(document).ready(function(){
         let id = $(this).attr('data-id');
         window.location.href = `/deleta-usuario/${id}`;
         }
-        console.log('heelo');
+        console.log('olá mundo');
 
     });
 

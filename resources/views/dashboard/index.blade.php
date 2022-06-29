@@ -467,6 +467,6 @@
 
   
 
-<script src="{{asset('dashboard/js/page-home.js')}}"></script>
+<script src="{{asset('dashboard/js/page-script.js')}}"></script>
     
 @endsection('content')
