@@ -24,7 +24,7 @@
               class="flex items-center justify-between p-4 mb-8 text-sm font-semibold  bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
               href="{{$cliente->link_drive}}" 
             >
-              <div class="flex items-center">
+              <div class="flex items-center ">
 
                
 
@@ -43,13 +43,13 @@
 
             <!-- With avatar -->
             <h4
-              class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300"
+              class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300 {{$display}}"
             >
               Seus boletos
             </h4>
-            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs {{$display}}">
               <div class="w-full overflow-x-auto">
-                <table class="w-full whitespace-no-wrap">
+                <table class="w-full whitespace-no-wrap ">
                   <thead>
                     <tr
                       class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
@@ -104,8 +104,8 @@
                              class="h-6 w-6 text-center ml-3 fa-download" 
                              fill="none" 
                              style="cursor:pointer;"
-                             data-file="{{$boleto->arquivo}}"
-                             data-name-file="{{$boleto->nome_arquivo}}"
+                             data-file="{{$arquivo}}"
+                             data-name-file="{{$nome_arquivo}}"
                              viewBox="0 0 24 24" 
                              stroke="currentColor" 
                              stroke-width="2">

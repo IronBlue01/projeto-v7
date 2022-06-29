@@ -14,15 +14,6 @@ class CadastroController extends Controller
 
         $requestFile = $request->arquivo;
 
-        //Boleto upload
-        if($request->hasFile('arquivo') && $request->file('arquivo')->isValid()){
-
-           $extension = $requestFile->getClientOriginalExtension();
-           $fileName  = md5($requestFile->getClientOriginalName() . strtotime('now')).'.'.$extension;
-           $requestFile->move(storage_path('app/boletos/'),$fileName);
-
-        }
-
 
        $insert_client = Cliente::create([
             'nome'       => $request->nome,
@@ -32,14 +23,24 @@ class CadastroController extends Controller
             'username'   => 'v7formaturas'
         ]);
 
+        //Verifica se existe arquivo
+        if($requestFile){
+            //Boleto upload
+                if($request->hasFile('arquivo') && $request->file('arquivo')->isValid()){
+                    $extension = $requestFile->getClientOriginalExtension();
+                    $fileName  = md5($requestFile->getClientOriginalName() . strtotime('now')).'.'.$extension;
+                    $requestFile->move(storage_path('app/boletos/'),$fileName);
+                }
 
-            Boleto::create([
-                'id_cliente'   => $insert_client->id_cliente,
-                'data'         => $request->data,
-                'nome_arquivo' => $requestFile->getClientOriginalName(),
-                'arquivo'      => $fileName,
-                'status'       => 'aprovado'
-            ]);
+                Boleto::create([
+                    'id_cliente'   => $insert_client->id_cliente,
+                    'data'         => $request->data,
+                    'nome_arquivo' => $requestFile->getClientOriginalName(),
+                    'arquivo'      => $fileName,
+                    'status'       => 'aprovado'
+                ]);
+        }
+
 
             return redirect('/home')->with('msg', 'Cliente cadastrado com sucesso');
     }

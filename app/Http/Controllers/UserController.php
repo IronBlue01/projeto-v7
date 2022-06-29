@@ -16,28 +16,44 @@ class UserController extends Controller
 
         $boleto = Boleto::find($request->id_cliente);
 
-        $vencimento = Carbon::parse($boleto->data)->format('d/m/Y');
+       
+        $vencimento   = isset($boleto) ? Carbon::parse($boleto->data)->format('d/m/Y') : 0;
+        $arquivo      = isset($boleto) ? $boleto->arquivo : '';
+        $nome_arquivo = isset($boleto) ? $boleto->nome_arquivo : '';
+        $display      = isset($boleto) ? '' : 'hidden';
+
         
         return view('user.tables',[
-                                    'cliente'    => $cliente,
-                                    'boleto'     => $boleto,
-                                    'vencimento' => $vencimento 
+                                    'cliente'      => $cliente,
+                                    'boleto'       => $boleto,
+                                    'vencimento'   => $vencimento,
+                                    'arquivo'      => $arquivo,
+                                    'nome_arquivo' => $nome_arquivo,
+                                    'display'      => $display 
                                   ]);
     }
 
     public function delete(Request $request){
 
         //Encontra o nome do arquivo do boleto
-        $arquivo = Boleto::find($request->id_user)->arquivo;
+        $arquivo = Boleto::find($request->id_user);
 
-        //Deleta o arquivo do boleto
-        unlink(storage_path('app/boletos/').$arquivo);
+        //Verifica se existe aruivo cadastrado para este user
+        if($arquivo){
+            
+            $arquivo = $arquivo->arquivo;
+
+            //Deleta o arquivo do boleto
+            unlink(storage_path('app/boletos/').$arquivo);
+
+            //apaga o boleto do banco e da pasta
+            Boleto::findOrfail($request->id_user)->delete();
+        }
 
         //apaga o user do banco  
         Cliente::findOrFail($request->id_user)->delete();
 
-        //apaga o boleto do banco e da pasta
-        Boleto::findOrfail($request->id_user)->delete();
+ 
 
         return redirect('home');
     }

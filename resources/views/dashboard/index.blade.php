@@ -3,6 +3,7 @@
 
 @section('content')
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" ></script>
 
 <link rel="stylesheet" href="./dashboard/css/mystyle.css">
         <main class="h-full overflow-y-auto">
@@ -195,15 +196,14 @@
                           </div>
                         </div>
                       </td>
-                      <td class="px-4 py-3 text-sm">
+                      <td id="td_{{$cliente['id_cliente']}}" class="px-4 py-3 text-sm tdcpf">
                         {{$cliente['cpf']}}
                       </td>
                       <td class="px-4 py-3 text-xs">
                         <span
-                          class="px-2 py-1 font-semibold leading-tight  text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                          Pago
-                        </span>
+                          id="{{$cliente['id_cliente']}}"
+                          class="px-2 py-1 orange font-semibold leading-tight  status text-green-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >Pendente</span>
                       </td>
                       <td class="px-4 py-3 text-sm">
                       <svg data-id="{{$cliente['id_cliente']}}" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icone delete  ml-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -404,8 +404,9 @@
                 <span class="text-gray-700 dark:text-gray-400">CPF:</span>
                 <input
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="000.000.000.00"
+                  placeholder="000.000.000-00"
                   name="cpf"
+                  id="cpf"
                 />
           </label>
 

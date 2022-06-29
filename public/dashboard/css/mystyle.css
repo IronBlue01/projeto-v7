@@ -9,3 +9,15 @@
 .icon:hover{
     background-color: brown !important;
 }
+
+.orange{
+    background-color: rgb(234 88 12) !important;
+}
+
+.green{
+    background-color: rgb(34 197 94)  !important;
+}
+
+.status{
+    cursor: pointer;
+}
