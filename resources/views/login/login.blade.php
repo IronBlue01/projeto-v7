@@ -25,7 +25,7 @@
             <img
               aria-hidden="true"
               class="object-cover w-full h-full dark:hidden"
-              src="./dashboard/img/login-office.jpeg"
+              src="./dashboard/img/login-office-dark.jpeg"
               alt="Office"
             />
             <img
