@@ -10,18 +10,19 @@ use Carbon\Carbon;
 
 class CadastroController extends Controller
 {
+
+
     public function cadastroBoleto(Request $request){
 
         $requestFile = $request->arquivo;
 
-
-       $insert_client = Cliente::create([
-            'nome'       => $request->nome,
-            'senha'      => 123,
-            'cpf'        => $request->cpf,
-            'link_drive' => $request->link,
-            'username'   => 'v7formaturas'
-        ]);
+        $insert_client = Cliente::create([
+                'nome'       => $request->nome,
+                'senha'      => 123,
+                'cpf'        => preg_replace('/[^0-9]/', '', $request->cpf),
+                'link_drive' => $request->link,
+                'username'   => 'v7formaturas'
+            ]);
 
         //Verifica se existe arquivo
         if($requestFile){

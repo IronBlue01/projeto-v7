@@ -9,7 +9,7 @@ class AuthController extends Controller
 {
     public function auth(Request $request){
        $user  =  $request->user;
-       $senha =  $request->senha;
+       $senha =  preg_replace('/[^0-9]/', '', $request->senha);
 
        if($user=='@adm' && $senha=='123'){
         return redirect("home");

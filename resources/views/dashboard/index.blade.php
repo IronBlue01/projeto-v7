@@ -191,13 +191,13 @@
                           <div>
                             <p class="font-semibold">{{$cliente['nome']}}</p>
                             <p class="text-xs text-gray-600 dark:text-gray-400">
-                              {{$cliente['cpf']}}
+                              {{ mask($cliente['cpf'],'###.###.###-##')}}
                             </p>
                           </div>
                         </div>
                       </td>
                       <td id="td_{{$cliente['id_cliente']}}" class="px-4 py-3 text-sm tdcpf">
-                        {{$cliente['cpf']}}
+                      {{ mask($cliente['cpf'],'###.###.###-##')}}
                       </td>
                       <td class="px-4 py-3 text-xs">
                         <span
