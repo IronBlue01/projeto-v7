@@ -4,14 +4,11 @@ $(document).ready(function(){
     $(document).on('click','.delete',function(){
 
         let result = confirm('Tem certeza que deseja exluir este usuário?');
-
-        if(result){
-            
+        if(result){ 
         let id = $(this).attr('data-id');
         window.location.href = `/deleta-usuario/${id}`;
         }
-        
-
+        console.log('heelo');
 
     });
 
