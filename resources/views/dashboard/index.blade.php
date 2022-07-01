@@ -7,6 +7,7 @@
 
 
 <link rel="stylesheet" href="./dashboard/css/mystyle.css">
+
         <main class="h-full overflow-y-auto">
           <div class="container px-6 mx-auto grid">
             <h2
@@ -647,8 +648,10 @@
     </div>
     <!-- End of modal backdrop -->
 
+
+    
   
 
-<script src="{{asset('dashboard/js/page-script.js')}}"></script>
+<script src="{{asset('dashboard/js/script.js')}}"></script>
     
 @endsection('content')
