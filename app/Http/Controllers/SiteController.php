@@ -19,8 +19,27 @@ class SiteController extends Controller
 
     public function homeDash(){
 
-        $clientes     =  Cliente::all();
+        $select = [
+            'clientes.id_cliente',
+            'clientes.nome',
+            'clientes.username',
+            'clientes.senha',
+            'clientes.cpf',
+            'clientes.link_drive',
+            'boletos.id_boleto',
+            'boletos.nome_arquivo',
+            'boletos.arquivo',
+            'boletos.data',
+            'boletos.status'
+        ];
+
+        $clientes     =  Cliente::leftjoin('boletos','boletos.id_cliente','clientes.id_cliente')
+                                  ->select($select)
+                                  ->get();
+                                  
         $num_clientes = $clientes->count();
+
+       
 
         return view('dashboard.index', ['clientes'     => $clientes,
                                         'num_clientes' => $num_clientes

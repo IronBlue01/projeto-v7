@@ -5,6 +5,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" ></script>
 
+
 <link rel="stylesheet" href="./dashboard/css/mystyle.css">
         <main class="h-full overflow-y-auto">
           <div class="container px-6 mx-auto grid">
@@ -162,7 +163,9 @@
                       <th class="px-4 py-3">CLIENTES</th>
                       <th class="px-4 py-3">CPF</th>
                       <th class="px-4 py-3">STATUS PAGAMENTO</th>
+                      <th class="px-4 py-3">EDITAR</th>
                       <th class="px-4 py-3">DELETAR</th>
+                      
                     </tr>
                   </thead>
                   <tbody
@@ -189,7 +192,7 @@
                             ></div>
                           </div>
                           <div>
-                            <p class="font-semibold">{{$cliente['nome']}}</p>
+                            <p id="data-nome-id-{{$cliente['id_cliente']}}" data-nome-id="{{$cliente['id_cliente']}}" class="font-semibold nomeUser">{{$cliente['nome']}}</p>
                             <p class="text-xs text-gray-600 dark:text-gray-400">
                               {{ mask($cliente['cpf'],'###.###.###-##')}}
                             </p>
@@ -199,17 +202,41 @@
                       <td id="td_{{$cliente['id_cliente']}}" class="px-4 py-3 text-sm tdcpf">
                       {{ mask($cliente['cpf'],'###.###.###-##')}}
                       </td>
-                      <td class="px-4 py-3 text-xs">
+                      <td class="px-4 py-3 text-xs ">
+                        &nbsp;
+                        @if ($cliente->status!=null)
+
+                        @if($cliente->status=='pendente')
                         <span
                           id="{{$cliente['id_cliente']}}"
-                          class="px-2 py-1 orange font-semibold leading-tight  status text-green-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >Pendente</span>
+                          class="px-2 py-1 ml-4 orange font-semibold leading-tight  status text-green-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >Pendente
+                        </span>
+                        @else
+                        <span
+                          id="{{$cliente['id_cliente']}}"
+                          class="px-2 py-1 ml-4 green font-semibold leading-tight  status text-green-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >Pago
+                        </span>
+                        @endif
+
+
+                      @endif
+
                       </td>
+
+                      <td class="px-4 py-3 text-xs">
+                      <svg id="{{$cliente['id_cliente']}}" @click="openModalEdit" style="cursor:pointer;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-4 editicon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                      </svg>
+                      </td>
+
                       <td class="px-4 py-3 text-sm">
                       <svg data-id="{{$cliente['id_cliente']}}" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icone delete  ml-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                       </svg>
                       </td>
+                      
                     </tr>
 
                     @endforeach
@@ -388,6 +415,161 @@
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Nome"
                   name="nome"
+                />
+          </label>
+
+          <label class="block text-sm mt-2 hidden">
+                <span class="text-gray-700 dark:text-gray-400">Senha:</span>
+                <input
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="****"
+                  name="senha"
+                />
+          </label>
+
+          <label class="block text-sm mt-2">
+                <span class="text-gray-700 dark:text-gray-400">CPF:</span>
+                <input
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="000.000.000-00"
+                  name="cpf"
+                  id="cpf"
+                />
+          </label>
+
+
+          <label class="block text-sm mt-2">
+                <span class="text-gray-700 dark:text-gray-400">Cole o Link de redirecionamento do google Drive abaixo caso exista</span>
+                <input
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="Link de redirecionamento do Google Drive"
+                  name="link"
+                />
+          </label>
+       
+
+          <label class="block text-sm mt-2">
+                <span class="text-gray-700 dark:text-gray-400">Dia do vencimento do boleto</span>
+                <input
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="Link de redirecionamento do Google Drive"
+                  type="date"
+                  name="data"
+                />
+          </label>
+
+          <label class="block text-sm mt-2">
+                <span class="text-gray-700 dark:text-gray-400">Escolher arquivo do boleto</span>
+                <input
+                  type="file"
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="Link de redirecionamento do Google Drive"
+                  type="date"
+                  name="arquivo"
+                />
+          </label>
+
+          </p>
+        </div>
+        <footer
+          class="flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800"
+        >
+          <button
+            @click="closeModal"
+            class="w-full px-5 py-3 text-sm font-medium leading-5 text-white text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="w-full px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+          >
+            Cadastrar
+          </button>
+          </form>
+        </footer>
+      </div>
+    </div>
+    <!-- End of modal backdrop -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal backdrop. This what you want to place close to the closing body tag -->
+ <div
+      x-show="isModalOpenEdit"
+      x-transition:enter="transition ease-out duration-150"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      class="fixed inset-0 z-30 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"
+    >
+      <!-- Modal -->
+      <div
+        x-show="isModalOpenEdit"
+        x-transition:enter="transition ease-out duration-150"
+        x-transition:enter-start="opacity-0 transform translate-y-1/2"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0  transform translate-y-1/2"
+        @click.away="closeModal"
+        @keydown.escape="closeModal"
+        class="w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl"
+        role="dialog"
+        id="modalEdit"
+      >
+        <!-- Remove header if you don't want a close icon. Use modal body to place modal tile. -->
+        <header class="flex justify-end">
+          <button
+            class="inline-flex items-center justify-center w-6 h-6 text-gray-400 transition-colors duration-150 rounded dark:hover:text-gray-200 hover: hover:text-gray-700"
+            aria-label="close"
+            @click="closeModalEdit"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </header>
+        <!-- Modal body -->
+        <div class="mt-4 mb-6">
+          <!-- Modal title -->
+          <p
+            class="mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300"
+          >
+          Editar um usuário
+          </p>
+          <!-- Modal description -->
+          <p class="text-sm text-gray-700 dark:text-gray-400">
+          <form action="{{ route('cadastro-cliente') }}" enctype="multipart/form-data" method="post">
+            @csrf
+          <label class="block text-sm">
+                <span class="text-gray-700 dark:text-gray-400">Nome:</span>
+                <input
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  placeholder="Nome"
+                  name="nome"
+                  id="edit_nome"
                 />
           </label>
 

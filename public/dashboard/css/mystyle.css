@@ -21,3 +21,15 @@
 .status{
     cursor: pointer;
 }
+
+.tdnome{
+    padding: 2px !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.tdcpf{
+    padding: 5px !important;
+    border: none !important;
+    outline: none !important;
+}

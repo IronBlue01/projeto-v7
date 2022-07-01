@@ -8,6 +8,7 @@ class Boleto extends Model
 {
 
     protected $primaryKey = 'id_cliente';
+    
     protected $fillable = [
                 'id_cliente',
                 'nome_arquivo',

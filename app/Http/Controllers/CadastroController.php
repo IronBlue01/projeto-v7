@@ -38,7 +38,7 @@ class CadastroController extends Controller
                     'data'         => $request->data,
                     'nome_arquivo' => $requestFile->getClientOriginalName(),
                     'arquivo'      => $fileName,
-                    'status'       => 'aprovado'
+                    'status'       => 'pendente'
                 ]);
         }
 
