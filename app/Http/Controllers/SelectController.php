@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Models\Boleto;
 use App\Http\Models\Cliente;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SelectController extends Controller
@@ -20,11 +21,16 @@ class SelectController extends Controller
         //Pega dados do boleto caso exista
         $boleto = Boleto::find($id_user);
 
+        if($boleto){
+            $data_formatada = Carbon::parse($boleto->data)->format('d/m/Y');
+        }
+
         
         return response()->json([
                                 'status' => 200, 
                                 'data'   => $dados_cliente,
-                                'boleto' => $boleto 
+                                'boleto' => $boleto,
+                                'data_formatada'   => $data_formatada ?? ''
                                 ]);
 
         } catch (\Exception $ex) {

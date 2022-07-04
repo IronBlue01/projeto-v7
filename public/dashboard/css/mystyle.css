@@ -33,3 +33,23 @@
     border: none !important;
     outline: none !important;
 }
+
+
+#box-download{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #121317;
+    width: 100%;
+    margin-top: 5px;
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#box-download:hover{
+    -webkit-box-shadow: 5px 5px 15px 5px #171717; 
+    box-shadow: 5px 5px 15px 5px #171717;
+    color: #90f542;
+}
+
+

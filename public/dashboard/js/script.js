@@ -137,6 +137,7 @@ $(document).ready(function(){
         //Usar o id do user para popular o model de edição
         let id_user = $(this).attr('id');
 
+
         //Busca as informações do cliente
         $.ajax({
             url: origin+`/lista-dados-cliente/${id_user}`,
@@ -145,8 +146,25 @@ $(document).ready(function(){
             async: true,
             success: function(response){
 
+                    let dados = response;
+
                     console.log(response);
 
+                    //Atribui o link ao campo input do user
+                    $('#edit_link').val(dados.data.link_drive);
+
+                    if(dados.boleto){
+                        $('#label_file').removeClass('hidden');
+                        $('#label_dia').removeClass('hidden');
+                        $('#label_download').removeClass('hidden');
+                        $('#editar_data').val(dados.data_formatada);
+                        $('#label_download').attr('data-file', dados.boleto.arquivo);
+                        $('#label_download').attr('data-name-file', dados.boleto.nome_arquivo);
+                    }else{
+                        $('#label_file').addClass('hidden');
+                        $('#label_dia').addClass('hidden');
+                        $('#label_download').addClass('hidden');
+                    }
 
             }
         });
@@ -155,8 +173,16 @@ $(document).ready(function(){
 
 
 
+    $(document).on('click','.box-download', function(){
 
 
+        let arquivo      = $(this).attr('data-file');
+        let nome_arquivo = $(this).attr('data-name-file'); 
+    
+        window.location.href = `/download/${arquivo}/${nome_arquivo}`;
+
+
+    });
 
 
 

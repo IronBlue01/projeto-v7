@@ -4,6 +4,8 @@
 @section('content')
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
 
 
 <link rel="stylesheet" href="./dashboard/css/mystyle.css">
@@ -525,7 +527,7 @@
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0  transform translate-y-1/2"
         @click.away="closeModal"
-        @keydown.escape="closeModal"
+        @keydown.escape="closeModalEdit"
         class="w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl"
         role="dialog"
         id="modalEdit"
@@ -564,7 +566,7 @@
           <p class="text-sm text-gray-700 dark:text-gray-400">
           <form action="{{ route('cadastro-cliente') }}" enctype="multipart/form-data" method="post">
             @csrf
-          <label class="block text-sm">
+          <!-- <label class="block text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Nome:</span>
                 <input
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -572,8 +574,8 @@
                   name="nome"
                   id="edit_nome"
                 />
-          </label>
-
+          </label> -->
+<!-- 
           <label class="block text-sm mt-2 hidden">
                 <span class="text-gray-700 dark:text-gray-400">Senha:</span>
                 <input
@@ -591,7 +593,7 @@
                   name="cpf"
                   id="cpf"
                 />
-          </label>
+          </label> -->
 
 
           <label class="block text-sm mt-2">
@@ -600,22 +602,46 @@
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Link de redirecionamento do Google Drive"
                   name="link"
+                  id="edit_link"
                 />
           </label>
        
 
-          <label class="block text-sm mt-2">
+          <label id="label_dia" class="block text-sm mt-2 ">
                 <span class="text-gray-700 dark:text-gray-400">Dia do vencimento do boleto</span>
                 <input
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Link de redirecionamento do Google Drive"
-                  type="date"
+
+                  type="text"
                   name="data"
+                  id="editar_data"
                 />
           </label>
 
-          <label class="block text-sm mt-2">
-                <span class="text-gray-700 dark:text-gray-400">Escolher arquivo do boleto</span>
+          <label id="label_download"
+                 class="block text-sm mt-2 box-download"
+                 data-file="##"
+                 data-name-file="##">
+                <span class="text-gray-700 dark:text-gray-400">Baixe o boleto para vizualizar</span>
+
+                  <div id="box-download"> 
+
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                  </svg>
+
+                    <p class="mt-2">Clique aqui para baixar o arquivo</p>
+
+                    <input type="hidden" id="edit_file">
+                    <input type="hidden" id="name_file">
+
+                  </div>
+
+          </label>
+
+
+          <label id="label_file" class="block text-sm mt-2 ">
+                <span class="text-gray-700 dark:text-gray-400">Substituir o arquivo</span>
                 <input
                   type="file"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -631,7 +657,8 @@
           class="flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800"
         >
           <button
-            @click="closeModal"
+            @click="closeModalEdit"
+            type="button"
             class="w-full px-5 py-3 text-sm font-medium leading-5 text-white text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
           >
             Cancelar
