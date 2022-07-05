@@ -564,8 +564,8 @@
           </p>
           <!-- Modal description -->
           <p class="text-sm text-gray-700 dark:text-gray-400">
-          <form action="{{ route('cadastro-cliente') }}" enctype="multipart/form-data" method="post">
-            @csrf
+          <form action="/api/atualiza-boleto" enctype="multipart/form-data" method="post">
+            <!-- @csrf -->
           <!-- <label class="block text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Nome:</span>
                 <input
@@ -595,13 +595,15 @@
                 />
           </label> -->
 
+          <input type="hidden" id="edit_id_cliente" name="edit_id_cliente">
+
 
           <label class="block text-sm mt-2">
                 <span class="text-gray-700 dark:text-gray-400">Cole o Link de redirecionamento do google Drive abaixo caso exista</span>
                 <input
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Link de redirecionamento do Google Drive"
-                  name="link"
+                  name="edit_link"
                   id="edit_link"
                 />
           </label>
@@ -611,9 +613,8 @@
                 <span class="text-gray-700 dark:text-gray-400">Dia do vencimento do boleto</span>
                 <input
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-
                   type="text"
-                  name="data"
+                  name="edit_data"
                   id="editar_data"
                 />
           </label>
@@ -622,19 +623,15 @@
                  class="block text-sm mt-2 box-download"
                  data-file="##"
                  data-name-file="##">
+
                 <span class="text-gray-700 dark:text-gray-400">Baixe o boleto para vizualizar</span>
-
                   <div id="box-download"> 
-
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                   </svg>
-
                     <p class="mt-2">Clique aqui para baixar o arquivo</p>
-
                     <input type="hidden" id="edit_file">
                     <input type="hidden" id="name_file">
-
                   </div>
 
           </label>
@@ -645,9 +642,7 @@
                 <input
                   type="file"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Link de redirecionamento do Google Drive"
-                  type="date"
-                  name="arquivo"
+                  name="edit_arquivo"
                 />
           </label>
 

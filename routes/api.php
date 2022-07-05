@@ -19,3 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('atualiza-status-pagamento/{id_user}','UpdateController@updateStatus')->name('atualiza-status-pagamento');
+
+Route::post('atualiza-cpf','UpdateController@updateCpf')->name('atualiza-cpf');
+
+Route::post('atualiza-nome','UpdateController@updateNome')->name('atualiza-nome');
+
+Route::post('atualiza-boleto','UpdateController@updateBoleto')->name('atualiza-boleto');

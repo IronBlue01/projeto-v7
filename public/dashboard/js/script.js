@@ -10,7 +10,7 @@ $(document).ready(function(){
         let id = $(this).attr('data-id');
         window.location.href = `/deleta-usuario/${id}`;
         }
-        console.log('olá mundo');
+        // console.log('olá mundo');
 
     });
 
@@ -86,10 +86,33 @@ $(document).ready(function(){
     //AO CLICAR FORA DO CAMPO DE INPUT DE EDIÇÃO DO CPF FECHA O CAMPO E ATRIBUI O NOVO VALOR
     //
     $(document).on('focusout', '.tdcpf', function(){
+
         let valor = $(this).val();
         let td_id = $(this).attr('data-id-td');
         $(`#${td_id}`).html(valor);
+
+        //Faz uma requisição para atualizar o CPF
+        $.ajax({
+            url: origin+`/api/atualiza-cpf`,
+            method: 'post',
+            dataType: 'json',
+            data: {
+                id: td_id,
+                cpf: valor
+            },
+            async: true,
+            success: function(response){
+
+                console.log(response);
+
+            }
+        });
+      
+        return false;
+
     });
+
+   
 
 
     //
@@ -116,8 +139,6 @@ $(document).ready(function(){
 
         $(this).html(input_nome);
 
-    
-
     });
 
 
@@ -128,15 +149,32 @@ $(document).ready(function(){
         let valor = $(this).val();
         let id = $(this).attr('data-id-td-nome');
         $(`#data-nome-id-${id}`).html(valor);
+
+        $.ajax({
+            url: origin+`/api/atualiza-nome`,
+            method: 'post',
+            dataType: 'json',
+            data:{
+                nome: valor,
+                id: id
+            },
+            async: true,
+            success: function(response){
+                console.log(response);
+            }
+        });
+
+
+
+        return false;
     });
 
     $(document).on('click', '.editicon', function(){
-
-
-
         //Usar o id do user para popular o model de edição
         let id_user = $(this).attr('id');
 
+        
+        $('#edit_id_cliente').val(id_user);
 
         //Busca as informações do cliente
         $.ajax({
@@ -148,7 +186,7 @@ $(document).ready(function(){
 
                     let dados = response;
 
-                    console.log(response);
+                    // console.log(response);
 
                     //Atribui o link ao campo input do user
                     $('#edit_link').val(dados.data.link_drive);
