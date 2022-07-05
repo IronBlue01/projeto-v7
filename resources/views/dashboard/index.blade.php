@@ -672,8 +672,6 @@
 
 
     
-  
-
-<script src="{{asset('dashboard/js/script.js')}}"></script>
+<script src="{{asset('dashboard/js/myscript.js')}}"></script>
     
 @endsection('content')

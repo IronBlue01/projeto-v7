@@ -81,14 +81,10 @@ class UpdateController extends Controller
                 // return 'tem arquivo';
             }  
 
-
-            // return response()->json(['status'      => 200, 
-            //                          'id_cliente' => $request->edit_id_cliente, 
-            //                          'link'        => $request->edit_link,
-            //                          'data'        => $request->edit_data]);
-
             return redirect('/home?success');
         
+
+            
 
         } catch (\Throwable $th) {
 
@@ -97,9 +93,6 @@ class UpdateController extends Controller
         }
 
     }
-
-
-
 
 
 
