@@ -72,18 +72,35 @@ class UpdateController extends Controller
 
         try {
 
-
             //Atualizar o link do user
             Cliente::find($request->edit_id_cliente)->update(['link_drive' => $request->edit_link]);
             
 
             if($request->hasFile('edit_arquivo') && $request->file('edit_arquivo')->isValid()){
-                // return 'tem arquivo';
+                
+                $requestFile = $request->edit_arquivo;
+
+                //Atualiza os nomes de arquivo
+                $hash_arquivo_antigo = $request->edit_file;
+
+                 //Deleta o arquivo do boleto do diretorio
+                 unlink(storage_path('app/boletos/').$hash_arquivo_antigo);
+
+                 $extension = $requestFile->getClientOriginalExtension();
+                 $fileName  = md5($requestFile->getClientOriginalName() . strtotime('now')).'.'.$extension;
+                 $requestFile->move(storage_path('app/boletos/'),$fileName);
+
+
+                 //Atualiza os nomes dos arquivos de boleto
+                 Boleto::find($request->edit_id_cliente)->update(
+                                                                  ['nome_arquivo' => $requestFile->getClientOriginalName(),
+                                                                    'arquivo'     => $fileName 
+                                                                  ]);               
+
             }  
 
-            return redirect('/home?success');
-        
 
+            return redirect('/home?success');
             
 
         } catch (\Throwable $th) {

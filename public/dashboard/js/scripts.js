@@ -198,6 +198,10 @@ $(document).ready(function(){
                         $('#editar_data').val(dados.data_formatada);
                         $('#label_download').attr('data-file', dados.boleto.arquivo);
                         $('#label_download').attr('data-name-file', dados.boleto.nome_arquivo);
+
+                        $('#edit_file').val(dados.boleto.arquivo);
+                        $('#name_file').val(dados.boleto.nome_arquivo);
+
                     }else{
                         $('#label_file').addClass('hidden');
                         $('#label_dia').addClass('hidden');

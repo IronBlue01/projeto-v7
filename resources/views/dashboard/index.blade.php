@@ -596,7 +596,8 @@
           </label> -->
 
           <input type="hidden" id="edit_id_cliente" name="edit_id_cliente">
-
+          <input type="hidden" value="name arqui" id="edit_nome_arquivo_antigo" name="edit_nome_arquivo_antigo">
+          <input type="hidden" value="arquivo antigo" id="arquivo_antigo" name="arquivo_antigo">
 
           <label class="block text-sm mt-2">
                 <span class="text-gray-700 dark:text-gray-400">Cole o Link de redirecionamento do google Drive abaixo caso exista</span>
@@ -630,8 +631,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                   </svg>
                     <p class="mt-2">Clique aqui para baixar o arquivo</p>
-                    <input type="hidden" id="edit_file">
-                    <input type="hidden" id="name_file">
+                    <input type="hidden" name="edit_file" id="edit_file">
+                    <input type="hidden" name="name_file" id="name_file">
                   </div>
 
           </label>
@@ -662,7 +663,7 @@
             type="submit"
             class="w-full px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
           >
-            Cadastrar
+            Atualizar
           </button>
           </form>
         </footer>
@@ -672,6 +673,6 @@
 
 
     
-<script src="{{asset('dashboard/js/myscript.js')}}"></script>
+<script src="{{asset('dashboard/js/scripts.js')}}"></script>
     
 @endsection('content')
