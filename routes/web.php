@@ -20,7 +20,7 @@ Route::post('authentication','AuthController@auth')->name('authentication');
 
 Route::get('/', 'SiteController@home');
 
-Route::get('home', 'SiteController@homeDash');
+Route::get('home', 'SiteController@homeDash')->name('home');
 
 Route::get('modal', 'SiteController@modal');
 
@@ -38,19 +38,17 @@ Route::get('sobre', 'SiteController@sobre');
 
 Route::post('cadastro-cliente', 'CadastroController@cadastroBoleto')->name('cadastro-cliente');
 
-
 Route::middleware(AuthMiddleware::class)
       ->get('page-cliente/{id_cliente}', 'UserController@PageCliente')
       ->name('page-cliente');
 
-
 Route::get('download/{arquivo}/{nome_arquivo}','DownloadController@download')->name('download');
-
 
 Route::get('deleta-usuario/{id_user}','UserController@delete')->name('deleta-usuario');
 
-
 Route::get('lista-dados-cliente/{id_user}','SelectController@list')->name('lista-dados-cliente');
+
+Route::get('images','ImageController@list')->name('list-all-images');
 
 
 

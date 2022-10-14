@@ -8,16 +8,19 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
 
-    public function home(){
+    public function home()
+    {
         return view('site.index');
     }
 
 
-    public function pageLogin(){
+    public function pageLogin()
+    {
         return view('login.login');
     }
 
-    public function homeDash(){
+    public function homeDash()
+    {
 
         $select = [
             'clientes.id_cliente',
@@ -35,43 +38,52 @@ class SiteController extends Controller
 
         $clientes     =  Cliente::leftjoin('boletos','boletos.id_cliente','clientes.id_cliente')
                                   ->select($select)
-                                  ->get();
-                                  
-        $num_clientes = $clientes->count();
+                                  ->paginate(2);
+        
+    
 
        
+
+        $num_clientes = $clientes->count();
 
         return view('dashboard.index', ['clientes'     => $clientes,
                                         'num_clientes' => $num_clientes
                                        ]);
     }
 
-    public function modal(){
+    public function modal()
+    {
         return view('dashboard.modals');
     }
 
-    public function card(){
+    public function card()
+    {
         return view('dashboard.cards');
     }
 
     
-    public function form(){
+    public function form()
+    {
         return view('dashboard.forms');
     }
 
-    public function chart(){
+    public function chart()
+    {
         return view('dashboard.charts');
     }
 
-    public function buttons(){
+    public function buttons()
+    {
         return view('dashboard.buttons');
     }
 
-    public function table(){
+    public function table()
+    {
         return view('dashboard.tables');
     }
 
-    public function sobre(){
+    public function sobre()
+    {
         return view('site.sobre');
     }
 

@@ -10,14 +10,10 @@ $(document).ready(function(){
         let id = $(this).attr('data-id');
         window.location.href = `/deleta-usuario/${id}`;
         }
-        // console.log('olá mundo');
-
     });
 
     //Adiciona mascara no cpf
     $('#cpf').mask('000.000.000-00', {reverse: true});
-
-
 
     //
     //ALTERNA O STATUS ENTRE PAGO E PENDENTE
@@ -44,10 +40,7 @@ $(document).ready(function(){
             url: origin+`/api/atualiza-status-pagamento/${id}`,
             method: 'post',
             dataType: 'json',
-            async: true,
-            success: function(response){
-                // console.log(response);
-            }
+            async: true
         });
     });
 
@@ -100,12 +93,7 @@ $(document).ready(function(){
                 id: td_id,
                 cpf: valor
             },
-            async: true,
-            success: function(response){
-
-                console.log(response);
-
-            }
+            async: true
         });
       
         return false;
@@ -158,10 +146,7 @@ $(document).ready(function(){
                 nome: valor,
                 id: id
             },
-            async: true,
-            success: function(response){
-                console.log(response);
-            }
+            async: true
         });
 
 
@@ -185,8 +170,6 @@ $(document).ready(function(){
             success: function(response){
 
                     let dados = response;
-
-                    // console.log(response);
 
                     //Atribui o link ao campo input do user
                     $('#edit_link').val(dados.data.link_drive);
@@ -214,18 +197,15 @@ $(document).ready(function(){
     });
 
 
-
     $(document).on('click','.box-download', function(){
-
-
         let arquivo      = $(this).attr('data-file');
         let nome_arquivo = $(this).attr('data-name-file'); 
-    
         window.location.href = `/download/${arquivo}/${nome_arquivo}`;
-
-
     });
 
+    $(document).on('click', '#btn-previous, #btn-next, .btn-number', function(){
+        window.location.href = $(this).attr('href');
+    });
 
 
 

@@ -10,6 +10,7 @@
 
 <link rel="stylesheet" href="./dashboard/css/mystyle.css">
 
+
         <main class="h-full overflow-y-auto">
           <div class="container px-6 mx-auto grid">
             <h2
@@ -251,7 +252,7 @@
                 class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
               >
                 <span class="flex items-center col-span-3">
-                  Mostrando 21-30 de 100
+                  Mostrando {{$num_clientes}} de {{$clientes->total()}}
                 </span>
                 <span class="col-span-2"></span>
                 <!-- Pagination -->
@@ -262,6 +263,8 @@
                         <button
                           class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
                           aria-label="Previous"
+                          id="btn-previous"
+                          href="{{$clientes->previousPageUrl()}}"
                         >
                           <svg
                             aria-hidden="true"
@@ -276,55 +279,27 @@
                           </svg>
                         </button>
                       </li>
-                      <li>
-                        <button
-                          class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          1
+
+                      @for($i=1; $i<=$clientes->lastPage();$i++)
+
+                      <li class="{{ $clientes->currentPage() == $i ? 'active-li' : '' }}">
+                      <button 
+                            class="px-3 btn-number py-1 rounded-md focus:outline-none focus:shadow-outline-purple" 
+                            href="{{ $clientes->url($i) }}"
+                       >
+
+                            {{$i}}
                         </button>
                       </li>
-                      <li>
-                        <button
-                          class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          2
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          class="px-3 py-1 text-white transition-colors duration-150 "bg-red-600 border border-r-0 border-purple-600 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          3
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          4
-                        </button>
-                      </li>
-                      <li>
-                        <span class="px-3 py-1">...</span>
-                      </li>
-                      <li>
-                        <button
-                          class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          8
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
-                        >
-                          9
-                        </button>
-                      </li>
+
+                      @endfor
+                  
                       <li>
                         <button
                           class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
                           aria-label="Next"
+                          id="btn-next"
+                          href="{{$clientes->nextPageUrl()}}"
                         >
                           <svg
                             class="w-4 h-4 fill-current"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,9 +15,6 @@
     ></script>
     <script src="{{asset('dashboard//js/alpine.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-
-
     
   </head>
   <body>
@@ -40,7 +37,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="#"
+                href="{{route('home')}}"
               >
                 <svg
                   class="w-5 h-5"
@@ -284,6 +281,40 @@
               <span class="ml-2" aria-hidden="true">+</span>
             </button>
           </div>
+
+          <div class="px-6 my-6">
+            <a
+              class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg  hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              href="{{route('list-all-images')}}"
+      
+              >
+              Alterar imagens
+              <span class="ml-2" aria-hidden="true"> 
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+              </svg>
+  
+              </span>
+</a>
+          </div>
+
+          <div class="px-6 my-6">
+            <button
+              class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg  hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+            >
+              Página sobre
+              <span class="ml-2" aria-hidden="true"> 
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+              </svg>
+  
+              </span>
+            </button>
+          </div>
+
+
+
+
         </div>
       </aside>
       <!-- Mobile sidebar -->
@@ -321,7 +352,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="#"
+                href="{{route('home')}}"
               >
                 <svg
                   class="w-5 h-5"

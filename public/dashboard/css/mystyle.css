@@ -52,4 +52,14 @@
     color: #90f542;
 }
 
+.active-li{
+
+    background-color: #f54e42;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bolder;
+
+
+}
+
 
